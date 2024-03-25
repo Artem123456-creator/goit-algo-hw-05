@@ -3,7 +3,8 @@ from typing import Callable
 
 def generator_numbers(text: str):
     # Знаходження всіх чисел в тексті
-    pattern = r'\s+\d+(\.\d+)?\s+'
+    #pattern = r'\s+\d+(\.\d+)?\s+' # \s  - це будь-який пробільний символ - і ентер, і табуляція.
+    pattern = r' +\d+(\.\d+)? ' 
     for match in re.finditer(pattern, text):
         yield float(match.group())
 
